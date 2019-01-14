@@ -7,7 +7,10 @@ const trainingData = [
   { input: [1, 1], output: [0] }
 ];
 
-net.train(trainingData);
+net.train(trainingData, {
+  log: (error) => console.log(error),
+  logPeriod: 10
+});
 
 console.log(net.run([0, 0]));
 console.log(net.run([0, 1]));
