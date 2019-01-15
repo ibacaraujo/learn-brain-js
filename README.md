@@ -1,2 +1,2 @@
-# xor-net-brain-js
-XOR Net with Brain.js
+# learn-brain-js
+Learn Brain.js
