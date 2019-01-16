@@ -47,7 +47,7 @@ const stats = net.train(trainingData);
 console.log(stats);
 
 console.log(net.run({
-  red: 0.9;
+  red: 0.9
 }))
 
 // bonus
@@ -62,3 +62,9 @@ for (let i = 0; i < colors.length; i++) {
 		output: colors[i]
 	});
 }
+
+const invertedNet = new brain.NeuralNetwork({ hiddenLayers: [3] });
+
+const invertedStats = invertedNet.train(invertedTrainingData);
+
+console.log(invertedStats);
