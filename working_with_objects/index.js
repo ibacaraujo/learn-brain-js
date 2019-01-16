@@ -30,3 +30,18 @@ const brightnesses = [
     { dark: 0.85 },
     { dark: 0.9 }
 ];
+
+const trainingData = [];
+
+for (let i = 0; i < colors.length; i++) {
+	trainingData.push({
+		input: colors[i],
+		output: brightnesses[i]
+	});
+}
+
+const net = new brain.NeuralNetwork({ hiddenLayers: [3] });
+
+const stats = net.train(trainingData);
+
+console.log(stats);
