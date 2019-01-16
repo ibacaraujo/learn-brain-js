@@ -45,3 +45,20 @@ const net = new brain.NeuralNetwork({ hiddenLayers: [3] });
 const stats = net.train(trainingData);
 
 console.log(stats);
+
+console.log(net.run({
+  red: 0.9;
+}))
+
+// bonus
+
+// input: { light, neutral, dark }
+
+const invertedTrainingData = [];
+
+for (let i = 0; i < colors.length; i++) {
+	invertedTrainingData.push({
+		input: brightnesses[i],
+		output: colors[i]
+	});
+}
