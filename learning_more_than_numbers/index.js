@@ -7,3 +7,16 @@ const restaurants = {
     "JHOP": "Saturday",
     "Owls": "Sunday"
 };
+
+// input: { Monday, Tuesday, Wednesday, etc. }
+// output: { Restaurant1, Restaurant2 }
+
+const trainingData = [];
+
+for (let restaurantName in restaurants) {
+    const dayOfWeek = restaurants[restaurantName];
+    trainingData.push({
+        input: { [dayOfWeek]: 1 },
+        output: { [restaurantName]: 1 }
+    });
+}
