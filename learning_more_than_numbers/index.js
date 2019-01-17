@@ -20,3 +20,11 @@ for (let restaurantName in restaurants) {
         output: { [restaurantName]: 1 }
     });
 }
+
+const net = new brain.NeuralNetwork({ hiddenLayer: [3] });
+
+const stats = net.train(trainingData);
+
+console.log(stats);
+
+console.log(net.run({'Monday': 1}));
