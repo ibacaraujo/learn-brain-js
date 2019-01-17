@@ -28,3 +28,24 @@ const stats = net.train(trainingData);
 console.log(stats);
 
 console.log(net.run({'Monday': 1}));
+
+function restaurantForDay(dayOfWeek) {
+    const result = net.run({ [dayOfWeek]: 1});
+    let highestValue = 0;
+    let highestRestaurantName = '';
+    for(let restaurantName in result) {
+        if(result[restaurantName] > highestValue) {
+            highestValue = result[restaurantName];
+            highestRestaurantName = restaurantName;
+        }
+    }
+    return highestRestaurantName;
+}
+
+console.log(restaurantForDay('Monday'));
+console.log(restaurantForDay('Tuesday'));
+console.log(restaurantForDay('Wednesday'));
+console.log(restaurantForDay('Thursday'));
+console.log(restaurantForDay('Friday'));
+console.log(restaurantForDay('Saturday'));
+console.log(restaurantForDay('Sunday'));
